@@ -40,14 +40,18 @@ class BookeoWidget extends React.Component {
   state = {
     loading: true
   }
+  componentDidMount() {
+    this.loadBookeo()
+  }
   componentWillUnmount() {
     this.cleanup()
   }
-  componentWillReceiveProps() {
-    this.cleanup()
-    this.setState({ loading: true }, () => {
-      this.loadBookeo();
-    })
+  componentWillReceiveProps(nextProps) {
+    if (this.props.url !== nextProps.url) {
+      // reload only if different widget url
+      this.cleanup()
+      this.setState({ loading: true }, this.loadBookeo)
+    }
   }
   cleanup = () => {
     // cleanup scripts

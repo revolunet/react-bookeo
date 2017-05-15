@@ -2,7 +2,7 @@
 
 [![npm package][npm-badge]][npm]
 
-Integrate bookeo widgets in your React App.
+Integrate bookeo widgets in your React App. Compatible with SSR.
 
 Demo : [http://revolunet.github.io/react-bookeo](http://revolunet.github.io/react-bookeo)
 
