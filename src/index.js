@@ -57,9 +57,11 @@ class BookeoWidget extends React.Component {
     ReactDOM.findDOMNode(this).querySelectorAll("script[src*='bookeo.com']").forEach(node => node.parentElement.removeChild(node));
     if (axiomct_div) {
       axiomct_div.parentElement.removeChild(axiomct_div)
+      axiomct_div = undefined;
     }
-    axiomct_div = undefined;
-    axiomct_loadStarted = false;
+    if (axiomct_loadStarted) {
+      axiomct_loadStarted = false;
+    }
   }
   loadBookeo = () => {
     const script = loadScript(this.props.url, () => {
