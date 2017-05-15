@@ -40,9 +40,6 @@ class BookeoWidget extends React.Component {
   state = {
     loading: true
   }
-  componentDidMount() {
-    this.loadBookeo()
-  }
   componentWillUnmount() {
     this.cleanup()
   }
