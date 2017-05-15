@@ -1,6 +1,6 @@
 {
   "name": "react-bookeo",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "react-bookeo booking widget",
   "main": "lib/index.js",
   "module": "es/index.js",
