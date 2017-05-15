@@ -52,7 +52,7 @@ class BookeoWidget extends React.Component {
       this.loadBookeo();
     })
   }
-  removeScript = () => {
+  cleanup = () => {
     // cleanup scripts
     ReactDOM.findDOMNode(this).querySelectorAll("script[src*='bookeo.com']").forEach(node => node.parentElement.removeChild(node));
     if (axiomct_div) {
