@@ -11,7 +11,7 @@ Demo : [http://revolunet.github.io/react-bookeo](http://revolunet.github.io/reac
 ```js
 <BookeoWidget
   url="https://bookeo.com/widget.js?a=224W7P3X41480A16D5CF"
-  waitMessage="Chargement en cours..."
+  waitMessage="Loading the planning...."
 />
 ```
 
