@@ -33,10 +33,13 @@
     "react-dom": "^15.5.4",
     "react-github-fork-ribbon": "^0.5.0"
   },
-  "author": "",
-  "homepage": "",
+  "author": "Julien Bouquillon <julien@revolunet.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/revolunet/react-bookeo.git"
+  },
+  "homepage": "https://revolunet.github.io/react-bookeo/",
   "license": "MIT",
-  "repository": "",
   "keywords": [
     "react-component",
     "bookeo",
