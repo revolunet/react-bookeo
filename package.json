@@ -39,6 +39,9 @@
     "url": "https://github.com/revolunet/react-bookeo.git"
   },
   "homepage": "https://revolunet.github.io/react-bookeo/",
+  "bugs": {
+    "url": "https://github.com/revolunet/react-bookeo/issues"
+  },
   "license": "MIT",
   "keywords": [
     "react-component",
