@@ -19,7 +19,7 @@ const containerStyle = {
   margin: '2em auto'
 }
 
-const loadScript = (url, cb, timeout=2000) => {
+const loadScript = (url, cb, timeout=1000) => {
   const script = document.createElement("script")
   script.type = "text/javascript"
   script.src = url
@@ -59,6 +59,9 @@ class BookeoWidget extends React.Component {
     if (typeof axiomct_div !== 'undefined') {
       axiomct_div.parentElement.removeChild(axiomct_div)
       axiomct_div = undefined;
+    }
+    if (typeof axiomct_project !== 'undefined') {
+      axiomct_project = undefined;
     }
     if (typeof axiomct_loadStarted !== 'undefined') {
       axiomct_loadStarted = false;
