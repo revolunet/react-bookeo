@@ -19,7 +19,7 @@ const containerStyle = {
   margin: '2em auto'
 }
 
-const loadScript = (url, cb, timeout=500) => {
+const loadScript = (url, cb, timeout=2000) => {
   const script = document.createElement("script")
   script.type = "text/javascript"
   script.src = url
