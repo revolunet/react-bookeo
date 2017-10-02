@@ -39,13 +39,17 @@ const loadScript = (url, cb, timeout=1000) => {
 
 class BookeoWidget extends React.Component {
   state = {
-    loading: true
+    loading: true,
+    gone: false
   }
   componentDidMount() {
     this.loadBookeo()
   }
   componentWillUnmount() {
     this.cleanup()
+    this.setState({
+      gone: true
+    })
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.url !== nextProps.url) {
@@ -67,12 +71,14 @@ class BookeoWidget extends React.Component {
     axiomct_loadStarted = false;
   }
   loadBookeo = () => {
-    const script = loadScript(this.props.url, () => {
-      this.setState({
-        loading: false
+    if (!this.state.gone) {
+      const script = loadScript(this.props.url, () => {
+        this.setState({
+          loading: false
+        });
       });
-    });
-    ReactDOM.findDOMNode(this).appendChild(script)
+      ReactDOM.findDOMNode(this).appendChild(script)
+    }
   }
   render() {
     return (
