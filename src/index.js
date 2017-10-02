@@ -25,9 +25,9 @@ const loadScript = (url, cb, timeout=1000) => {
   script.src = url
   script.onload = () => setTimeout(() => {
     // ensure bookeo started
-    var bookeoContentLoaded = typeof axiomct_div !== "undefined" && axiomct_div && axiomct_div.querySelectorAll('iframe').length;
-    if(!bookeoContentLoaded && axiomct_spinner === null) {
-      // axiomct_spinner is null when lib already loaded but onload not triggered
+    var shouldTriggerWidget = axiomct_div === undefined && !axiomct_spinner;
+    //var bookeoContentLoaded = typeof axiomct_div !== "undefined" && axiomct_div && axiomct_div.querySelectorAll('iframe').length;
+    if(shouldTriggerWidget) {
       axiomct_onload()
     }
     if(cb) {
@@ -54,6 +54,7 @@ class BookeoWidget extends React.Component {
       this.setState({ loading: true }, this.loadBookeo)
     }
   }
+
   cleanup = () => {
     // cleanup scripts
     ReactDOM.findDOMNode(this).querySelectorAll("script[src*='bookeo.com']").forEach(node => node.parentElement.removeChild(node));
