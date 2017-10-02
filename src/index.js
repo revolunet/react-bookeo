@@ -62,12 +62,9 @@ class BookeoWidget extends React.Component {
       axiomct_div.parentElement.removeChild(axiomct_div)
       axiomct_div = undefined;
     }
-    if (typeof axiomct_project !== 'undefined') {
-      axiomct_project = undefined;
-    }
-    if (typeof axiomct_loadStarted !== 'undefined') {
-      axiomct_loadStarted = false;
-    }
+    axiomct_spinner = undefined;
+    axiomct_project = undefined;
+    axiomct_loadStarted = false;
   }
   loadBookeo = () => {
     const script = loadScript(this.props.url, () => {
