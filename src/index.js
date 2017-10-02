@@ -42,8 +42,8 @@ class BookeoWidget extends React.Component {
     loading: true
   }
   componentDidMount() {
-    this.loadBookeo()
     this.mounted = true
+    this.loadBookeo()
   }
   componentWillUnmount() {
     this.mounted = false
