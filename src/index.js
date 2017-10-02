@@ -46,10 +46,10 @@ class BookeoWidget extends React.Component {
     this.loadBookeo()
   }
   componentWillUnmount() {
-    this.cleanup()
     this.setState({
       gone: true
     })
+    this.cleanup()
   }
   componentWillReceiveProps(nextProps) {
     if (this.props.url !== nextProps.url) {
@@ -73,9 +73,15 @@ class BookeoWidget extends React.Component {
   loadBookeo = () => {
     if (!this.state.gone) {
       const script = loadScript(this.props.url, () => {
-        this.setState({
-          loading: false
-        });
+        if (!this.state.gone) {
+          this.setState(curState => {
+            if (!curState.gone) {
+              return {
+                loading: false
+              }
+            }
+          });
+        }
       });
       ReactDOM.findDOMNode(this).appendChild(script)
     }
