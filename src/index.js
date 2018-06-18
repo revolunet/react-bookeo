@@ -61,7 +61,7 @@ class BookeoWidget extends React.Component {
     // cleanup scripts
     ReactDOM.findDOMNode(this)
       .querySelectorAll("script[src*='bookeo.com']")
-      .forEach(node => node.parentElement.removeChild(node))
+      .forEach(node => node && node.parentElement && node.parentElement.removeChild(node))
     if (typeof axiomct_div !== "undefined") {
       axiomct_div.parentElement.removeChild(axiomct_div)
       axiomct_div = undefined
